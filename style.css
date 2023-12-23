@@ -10,19 +10,22 @@ h1 {
 
 #main-grid {
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   width: 500px;
   height: 500px;
+  border: 1px solid black;
+  box-sizing: border-box;
 }
 
 /* MAKING SQUARES FIT IN MAIN GRID*/
 .grid-row {
   display: flex;
   width: 100%;
+  flex-direction: row;
 }
 
 .grid-item {
-  width: fit-content;
+  width: 100%;
   border: 1px solid black;
   background-color: cadetblue;
   box-sizing: border-box;

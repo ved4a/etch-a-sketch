@@ -7,7 +7,7 @@ function create16x16() {
     const row = document.createElement("div");
     row.classList.add("grid-row");
 
-    for (let j = 0; j < 16; i++) {
+    for (let j = 0; j < 16; j++) {
       const div = document.createElement("div");
       div.classList.add("grid-item");
       row.appendChild(div);
