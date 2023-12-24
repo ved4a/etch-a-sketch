@@ -40,7 +40,8 @@ h1 {
 /* Creating grid elements */
 .grid-item {
   width: 100%;
-  border: 1px solid black;
-  background-color: cadetblue;
+  /* border: 1px solid black;
+  background-color: cadetblue; */
+  background-color: white;
   box-sizing: border-box;
 }

@@ -17,3 +17,11 @@ function create16x16() {
 }
 
 create16x16();
+
+const gridItems = document.querySelectorAll(".grid-item");
+
+gridItems.forEach((gridItem) => {
+  gridItem.addEventListener("mouseover", function () {
+    gridItem.style.backgroundColor = "black";
+  });
+});
