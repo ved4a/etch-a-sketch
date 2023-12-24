@@ -1,14 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
+:root {
+  --primary-color: #f2c42f;
+  --secondary-color: #da661b;
+  --tertiary-color: #5ec2bf;
+}
+
 body {
   margin: 0;
+  background-color: var(--tertiary-color);
 }
 
 h1 {
   font-family: "Lobster", cursive;
-  font-size: 35px;
-  margin: 0 0.5em 0.5em 0.5em;
+  font-size: 55px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(3, 3, 3, 0.5);
+  color: var(--primary-color);
 }
 
 .wrapper {
@@ -17,6 +26,11 @@ h1 {
   flex-direction: column;
   align-items: center;
   padding: 2em;
+  margin: 30px auto;
+  background-color: var(--secondary-color);
+  border-radius: 30px;
+  border: 2px solid #333;
+  width: 800px;
 }
 
 main {
@@ -36,14 +50,29 @@ button {
   padding: 10px;
   margin: 1em;
   font-family: "Poppins", sans-serif;
+  border-radius: 10px;
+  border: 2px solid #333;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  font-size: 17px;
+  color: var(--secondary-color);
+}
+
+button:hover,
+button:focus {
+  background-color: var(--primary-color);
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 #main-grid {
   display: flex;
   flex-wrap: wrap;
-  width: 500px;
-  height: 500px;
-  border: 1px solid black;
+  width: 650px;
+  height: 650px;
+  border: 2px solid #333;
   box-sizing: border-box;
 }
 
@@ -57,9 +86,8 @@ button {
 /* Creating grid elements */
 .grid-item {
   width: 100%;
-  /* border: 1px solid black;
-  background-color: cadetblue; */
-  background-color: white;
+  border: 0.5px solid #333;
+  background-color: whitesmoke;
   box-sizing: border-box;
 }
 
@@ -70,8 +98,10 @@ button {
   font-family: "Poppins", sans-serif;
   padding: 0.75em;
   margin: 20px;
-  border: 1px solid black;
+  border: 2px solid #333;
   border-radius: 10px;
+  background-color: whitesmoke;
+  color: var(--secondary-color);
 }
 
 input {
@@ -98,4 +128,13 @@ footer {
   display: flex;
   justify-content: center;
   font-family: "Poppins", sans-serif;
+  background-color: whitesmoke;
+  padding: 0.5em;
+}
+
+footer > p {
+  background-color: var(--secondary-color);
+  color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
 }

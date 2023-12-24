@@ -36,14 +36,14 @@ function changeColor(desiredColor) {
 // Eraser
 const eraseBtn = document.querySelector(".erase");
 eraseBtn.addEventListener("click", function () {
-  changeColor("white");
+  changeColor("whitesmoke");
 });
 
 // Clear
 const clearBtn = document.querySelector(".clear");
 clearBtn.addEventListener("click", function () {
   gridItems.forEach((gridItem) => {
-    gridItem.style.backgroundColor = "white";
+    gridItem.style.backgroundColor = "whitesmoke";
   });
 });
 
