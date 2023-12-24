@@ -7,7 +7,7 @@ body {
 
 h1 {
   font-family: "Lobster", cursive;
-  font-size: 40px;
+  font-size: 35px;
   margin: 0 0.5em 0.5em 0.5em;
 }
 
@@ -17,7 +17,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   padding: 2em;
-  width: 100%;
 }
 
 main {
@@ -28,16 +27,25 @@ main {
   width: 100%;
 }
 
+.controls {
+  margin: 10px;
+  margin-top: 0;
+}
+
+button {
+  padding: 10px;
+  margin: 1em;
+  font-family: "Poppins", sans-serif;
+}
+
 #main-grid {
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   border: 1px solid black;
   box-sizing: border-box;
 }
-
-/* MAKING SQUARES FIT IN MAIN GRID*/
 
 /* Creating a grid row to hold the individual grid elements*/
 .grid-row {
@@ -61,7 +69,7 @@ main {
   height: 75px;
   font-family: "Poppins", sans-serif;
   padding: 0.75em;
-  margin: 1.25em;
+  margin: 20px;
   border: 1px solid black;
   border-radius: 10px;
 }
@@ -83,4 +91,11 @@ input {
   display: flex;
   justify-content: center;
   font-weight: bold;
+}
+
+/* Footer design */
+footer {
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
 }
