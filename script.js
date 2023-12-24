@@ -22,13 +22,24 @@ create16x16();
 // MANIPULATING GRID ITEMS
 const gridItems = document.querySelectorAll(".grid-item");
 
-gridItems.forEach((gridItem) => {
-  gridItem.addEventListener("mouseover", function () {
-    gridItem.style.backgroundColor = "black";
+// USING BUTTONS TO MANIPULATE GRID
+
+// Function to Manipulate Colors
+function changeColor(desiredColor) {
+  gridItems.forEach((gridItem) => {
+    gridItem.addEventListener("mouseover", function () {
+      gridItem.style.backgroundColor = desiredColor;
+    });
   });
+}
+
+// Eraser
+const eraseBtn = document.querySelector(".erase");
+eraseBtn.addEventListener("click", function () {
+  changeColor("white");
 });
 
-// USING BUTTONS TO MANIPULATE GRID
+// Clear
 const clearBtn = document.querySelector(".clear");
 clearBtn.addEventListener("click", function () {
   gridItems.forEach((gridItem) => {
@@ -36,14 +47,30 @@ clearBtn.addEventListener("click", function () {
   });
 });
 
-const eraseBtn = document.querySelector(".erase");
-eraseBtn.addEventListener("click", function () {
+// Color
+const colorBtn = document.querySelector(".color-mode");
+colorBtn.addEventListener("click", function () {
+  changeColor("black");
+});
+
+// Rainbow
+const rainbowBtn = document.querySelector(".rainbow-mode");
+rainbowBtn.addEventListener("click", function () {
   gridItems.forEach((gridItem) => {
     gridItem.addEventListener("mouseover", function () {
-      gridItem.style.backgroundColor = "white";
+      gridItem.style.backgroundColor = getRandomColor();
     });
   });
 });
+
+function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 // CREATING RANGE SLIDER
 function updateSliderValue(value) {
