@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 body {
   margin: 0;
@@ -6,7 +7,7 @@ body {
 
 h1 {
   font-family: "Lobster", cursive;
-  font-size: 50px;
+  font-size: 40px;
   margin: 0 0.5em 0.5em 0.5em;
 }
 
@@ -16,14 +17,22 @@ h1 {
   flex-direction: column;
   align-items: center;
   padding: 2em;
-  width: 800px;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 #main-grid {
   display: flex;
   flex-wrap: wrap;
-  width: 650px;
-  height: 650px;
+  width: 600px;
+  height: 600px;
   border: 1px solid black;
   box-sizing: border-box;
 }
@@ -44,4 +53,34 @@ h1 {
   background-color: cadetblue; */
   background-color: white;
   box-sizing: border-box;
+}
+
+/* RANGE SILDER */
+.range-slider {
+  width: 350px;
+  height: 75px;
+  font-family: "Poppins", sans-serif;
+  padding: 0.75em;
+  margin: 1.25em;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+}
+
+.value {
+  padding: 1em;
+}
+
+.slider-value {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
 }
