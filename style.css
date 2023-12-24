@@ -6,24 +6,38 @@ body {
 
 h1 {
   font-family: "Lobster", cursive;
+  font-size: 50px;
+  margin: 0 0.5em 0.5em 0.5em;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  width: 800px;
 }
 
 #main-grid {
   display: flex;
   flex-wrap: wrap;
-  width: 500px;
-  height: 500px;
+  width: 650px;
+  height: 650px;
   border: 1px solid black;
   box-sizing: border-box;
 }
 
 /* MAKING SQUARES FIT IN MAIN GRID*/
+
+/* Creating a grid row to hold the individual grid elements*/
 .grid-row {
   display: flex;
   width: 100%;
   flex-direction: row;
 }
 
+/* Creating grid elements */
 .grid-item {
   width: 100%;
   border: 1px solid black;
