@@ -3,65 +3,83 @@
 // MANIPULATING MAIN GRID
 const mainGrid = document.querySelector("#main-grid");
 
-function create16x16() {
-  for (let i = 0; i < 16; i++) {
+// CREATING RANGE SLIDER
+function updateSliderValue(value) {
+  document.querySelector(".slider-value").textContent = value;
+  createGrid(value);
+}
+
+const slider = document.querySelector(".slider");
+slider.addEventListener("input", function () {
+  updateSliderValue(this.value);
+});
+
+updateSliderValue(slider.value);
+
+function createGrid(value) {
+  mainGrid.innerHTML = "";
+
+  for (let i = 0; i < value; i++) {
     const row = document.createElement("div");
     row.classList.add("grid-row");
 
-    for (let j = 0; j < 16; j++) {
+    for (let j = 0; j < value; j++) {
       const div = document.createElement("div");
       div.classList.add("grid-item");
       row.appendChild(div);
     }
     mainGrid.appendChild(row);
   }
+  updateGridItemEventListeners();
 }
-
-create16x16();
 
 // MANIPULATING GRID ITEMS
-const gridItems = document.querySelectorAll(".grid-item");
+function updateGridItemEventListeners() {
+  const gridItems = document.querySelectorAll(".grid-item");
 
-// USING BUTTONS TO MANIPULATE GRID
+  // USING BUTTONS TO MANIPULATE GRID
 
-// Function to Manipulate Colors
-function changeColor(desiredColor) {
-  gridItems.forEach((gridItem) => {
-    gridItem.addEventListener("mouseover", function () {
-      gridItem.style.backgroundColor = desiredColor;
+  // Function to Manipulate Colors
+  function changeColor(desiredColor) {
+    gridItems.forEach((gridItem) => {
+      gridItem.addEventListener("mouseover", function () {
+        gridItem.style.backgroundColor = desiredColor;
+      });
+    });
+  }
+
+  // Eraser
+  const eraseBtn = document.querySelector(".erase");
+  eraseBtn.addEventListener("click", function () {
+    changeColor("whitesmoke");
+  });
+
+  // Clear
+  const clearBtn = document.querySelector(".clear");
+  clearBtn.addEventListener("click", function () {
+    gridItems.forEach((gridItem) => {
+      gridItem.style.backgroundColor = "whitesmoke";
+    });
+  });
+
+  // Color
+  const colorBtn = document.querySelector(".color-mode");
+  colorBtn.addEventListener("click", function () {
+    changeColor("black");
+  });
+
+  // Rainbow
+  const rainbowBtn = document.querySelector(".rainbow-mode");
+  rainbowBtn.addEventListener("click", function () {
+    gridItems.forEach((gridItem) => {
+      gridItem.addEventListener("mouseover", function () {
+        gridItem.style.backgroundColor = getRandomColor();
+      });
     });
   });
 }
 
-// Eraser
-const eraseBtn = document.querySelector(".erase");
-eraseBtn.addEventListener("click", function () {
-  changeColor("whitesmoke");
-});
-
-// Clear
-const clearBtn = document.querySelector(".clear");
-clearBtn.addEventListener("click", function () {
-  gridItems.forEach((gridItem) => {
-    gridItem.style.backgroundColor = "whitesmoke";
-  });
-});
-
-// Color
-const colorBtn = document.querySelector(".color-mode");
-colorBtn.addEventListener("click", function () {
-  changeColor("black");
-});
-
-// Rainbow
-const rainbowBtn = document.querySelector(".rainbow-mode");
-rainbowBtn.addEventListener("click", function () {
-  gridItems.forEach((gridItem) => {
-    gridItem.addEventListener("mouseover", function () {
-      gridItem.style.backgroundColor = getRandomColor();
-    });
-  });
-});
+updateGridItemEventListeners();
 
 function getRandomColor() {
   const letters = "0123456789ABCDEF";
@@ -70,9 +88,4 @@ function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
-}
-
-// CREATING RANGE SLIDER
-function updateSliderValue(value) {
-  document.querySelector(".slider-value").textContent = value;
 }
