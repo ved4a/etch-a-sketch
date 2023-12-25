@@ -138,8 +138,12 @@ input {
 footer {
   display: flex;
   justify-content: center;
-  font-family: "Press Start 2P", cursive;
+  align-items: center;
+  width: 100%;
   background-color: whitesmoke;
+  font-size: 15px;
+  margin-top: auto;
+  font-family: "Press Start 2P", cursive;
   padding: 0.5em;
 }
 
