@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 :root {
-  --primary-color: #f2c42f;
-  --secondary-color: #da661b;
-  --tertiary-color: #5ec2bf;
+  --primary-color: #faca78;
+  --secondary-color: #9fd3cf;
+  --tertiary-color: #264653;
+  --heading-color: #da4a37;
+  --text-color: #333;
 }
 
 body {
@@ -14,10 +16,10 @@ body {
 
 h1 {
   font-family: "Lobster", cursive;
-  font-size: 55px;
   margin: 0;
-  text-shadow: 2px 2px 4px rgba(3, 3, 3, 0.5);
-  color: var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(224, 255, 255, 0.5);
+  color: #da4a37;
+  font-size: 65px;
 }
 
 .wrapper {
@@ -29,7 +31,7 @@ h1 {
   margin: 30px auto;
   background-color: var(--secondary-color);
   border-radius: 30px;
-  border: 2px solid #333;
+  border: 2px solid whitesmoke;
   width: 800px;
 }
 
@@ -47,23 +49,28 @@ main {
 }
 
 button {
-  padding: 10px;
+  padding: 7px;
+  width: 90px;
   margin: 1em;
-  font-family: "Poppins", sans-serif;
-  border-radius: 10px;
-  border: 2px solid #333;
+  font-family: "Press Start 2P", sans-serif;
+  border: 2px solid var(--text-color);
   box-sizing: border-box;
-  background-color: whitesmoke;
-  font-size: 17px;
-  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  font-size: 10px;
+  color: var(--text-color);
 }
 
-button:hover,
-button:focus {
-  background-color: var(--primary-color);
+button:not(.clear):hover,
+button:not(.clear):focus {
+  background-color: var(--heading-color);
   color: whitesmoke;
   border: 2px solid whitesmoke;
   box-sizing: border-box;
+  cursor: pointer;
+}
+
+.clear {
+  background-color: whitesmoke;
   cursor: pointer;
 }
 
@@ -72,36 +79,38 @@ button:focus {
   flex-wrap: wrap;
   width: 650px;
   height: 650px;
-  border: 2px solid #333;
+  border: 0.5px solid gray;
   box-sizing: border-box;
 }
 
-/* Creating a grid row to hold the individual grid elements*/
 .grid-row {
   display: flex;
   width: 100%;
   flex-direction: row;
 }
 
-/* Creating grid elements */
 .grid-item {
   width: 100%;
-  border: 0.5px solid #333;
-  background-color: whitesmoke;
+  border: 0.5px solid gray;
+  background-color: lightgrey;
   box-sizing: border-box;
 }
 
-/* RANGE SILDER */
 .range-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 350px;
   height: 75px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Press Start 2P", sans-serif;
   padding: 0.75em;
+  padding-bottom: 0;
   margin: 20px;
-  border: 2px solid #333;
+  border: 2px solid var(--text-color);
   border-radius: 10px;
   background-color: whitesmoke;
-  color: var(--secondary-color);
+  color: var(--heading-color);
 }
 
 input {
@@ -111,6 +120,7 @@ input {
 .field {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .value {
@@ -120,21 +130,22 @@ input {
 .slider-value {
   display: flex;
   justify-content: center;
-  font-weight: bold;
+  color: var(--text-color);
 }
 
-/* Footer design */
 footer {
   display: flex;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Press Start 2P", cursive;
   background-color: whitesmoke;
   padding: 0.5em;
 }
 
 footer > p {
   background-color: var(--secondary-color);
-  color: whitesmoke;
+  color: var(--text-color);
   border-radius: 10px;
   padding: 10px;
+  border: 2px solid var(--text-color);
+  font-size: 10px;
 }

@@ -51,14 +51,14 @@ function updateGridItemEventListeners() {
   // Eraser
   const eraseBtn = document.querySelector(".erase");
   eraseBtn.addEventListener("click", function () {
-    changeColor("whitesmoke");
+    changeColor("lightgray");
   });
 
   // Clear
   const clearBtn = document.querySelector(".clear");
   clearBtn.addEventListener("click", function () {
     gridItems.forEach((gridItem) => {
-      gridItem.style.backgroundColor = "whitesmoke";
+      gridItem.style.backgroundColor = "lightgray";
     });
   });
 
